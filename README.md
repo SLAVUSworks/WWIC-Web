@@ -17,10 +17,10 @@ serta blog yang memuat banyak informasi mengenai Franchise World Witches</p>
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <ul>
-    <li>Laravel  = 10.10</li>
-    <li>PHP      = 8.1</li>
-    <li>Database = MySQL</li>
-    <li>UI/UX    = Bootstrap 5 (At Development Only)<li>
+    <li><p>Laravel  = 10.10</p></li>
+    <li><p>PHP      = 8.1</p></li>
+    <li><p>Database = MySQL</p></li>
+    <li><p>UI/UX    = Bootstrap 5 (At Development Only)</p></li>
 </ul>
 
 ## License
