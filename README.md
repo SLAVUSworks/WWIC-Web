@@ -1,7 +1,7 @@
 # WWIC Official Website
 
-World Witches Indonesia Community Website
-Oleh langit dan lautan, kita dihubungkan!
+<p>World Witches Indonesia Community Website</p>
+<p>Oleh langit dan lautan, kita dihubungkan!</p>
 
 <p>Dalam wacana, website ini kedepannya akan merangkap sebagai Papan Informasi Segala yang terkait dengan komunitas
 serta blog yang memuat banyak informasi mengenai Franchise World Witches</p>
@@ -10,18 +10,19 @@ serta blog yang memuat banyak informasi mengenai Franchise World Witches</p>
 
 ## Authors
 
-- [@slavusworks](https://github.com/SLAVUSworks)
+- [@slavus](https://github.com/SLAVUSworks)
 
 ## Tech are Used
 
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
-Laravel  = 10.10
-PHP      = 8.1
-Database = MySQL
-UI/UX    = Bootstrap 5 (At Development Only)
+<ul>
+    <li>Laravel  = 10.10</li>
+    <li>PHP      = 8.1</li>
+    <li>Database = MySQL</li>
+    <li>UI/UX    = Bootstrap 5 (At Development Only)<li>
+</ul>
 
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
-# WWIC-Web
