@@ -6,7 +6,7 @@
 <p>Dalam wacana, website ini kedepannya akan merangkap sebagai Papan Informasi Segala yang terkait dengan komunitas
 serta blog yang memuat banyak informasi mengenai Franchise World Witches</p>
 
-<img src="https://cdn.discordapp.com/attachments/497671304229421069/1223199942546423828/lyn.png?ex=6618fcb8&is=660687b8&hm=7787be8bf3d5fc6792b3c2ebcad8a4dbfd92288e93c8e0f850cab707c34351a3&" alt="LynneNgoding">
+![LynneNgoding](https://cdn.discordapp.com/attachments/497671304229421069/1223199942546423828/lyn.png?ex=6618fcb8&is=660687b8&hm=7787be8bf3d5fc6792b3c2ebcad8a4dbfd92288e93c8e0f850cab707c34351a3&)
 
 ## Authors
 
