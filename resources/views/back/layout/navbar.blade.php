@@ -2,7 +2,7 @@
     <div class="position-sticky pt-3 sidebar-sticky">
       <ul class="nav flex-column">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="{{ url('dashboard') }}">
+          <a class="nav-link {{ Request::segment(1) === 'dashboard' ? 'active' : null }}" aria-current="page" href="{{ url('dashboard') }}">
             <span data-feather="home" class="align-text-bottom"></span>
             Dashboard
           </a>
@@ -14,7 +14,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="{{ url('categories') }}">
+          <a class="nav-link {{ Request::segment(1) === 'categories' ? 'active' : null }}" href="{{ url('categories') }}">
             <span data-feather="list" class="align-text-bottom"></span>
             Kategori
           </a>
