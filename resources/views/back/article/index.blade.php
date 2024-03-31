@@ -13,7 +13,7 @@
        
     </div>
         <div class="mt-3">
-            <button class="btn btn-success mb-3" data-bs-toggle="modal" data-bs-target="#modalCreate">Create</button>
+            <a href="{{ url('article/create') }}" class="btn btn-success mb-3">Create</a>
 
             @if ($errors->any())
             <div class="alert alert-danger">
@@ -39,7 +39,7 @@
                         <th>No</th>
                         <th>Judul</th>
                         <th>Kategori</th>
-                        <th>Pelihat</th>
+                        <th>Dilihat</th>
                         <th>Status</th>
                         <th>Publikasi</th>
                         <th>Fungsi</th>
@@ -68,8 +68,8 @@
                 ajax: '{{ url()->current() }}',
                 columns: [
                     {
-                        data: 'id',
-                        name: 'id'
+                        data: 'DT_RowIndex',
+                        name: 'DT_RowIndex'
                     },
                     {
                         data: 'title',

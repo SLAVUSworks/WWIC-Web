@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('slug');
             $table->longText('desc');
             $table->string('img');
-            $table->integer('views');
+            $table->integer('views')->default(0);
             $table->string('status');
             $table->date('publish_date');
             $table->timestamps();
