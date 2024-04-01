@@ -42,7 +42,7 @@ class ArticleController extends Controller
                 ->addColumn('button', function($article) {
                     return '
                     <div class="text-center">
-                        <a href="" class="btn btn-secondary">Detail</a>
+                        <a href="article/'.$article->id.'" class="btn btn-secondary">Detail</a>
                         <a href="" class="btn btn-primary">Edit</a>
                         <a href="" class="btn btn-danger">Delete</a>
                     </div>';
@@ -88,7 +88,9 @@ class ArticleController extends Controller
      */
     public function show(string $id)
     {
-        //
+        return view('back.article.show', [
+            'article' => Article::find($id)
+        ]);
     }
 
     /**
