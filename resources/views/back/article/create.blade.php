@@ -49,10 +49,6 @@
                 <div class="mb-3">
                     <label for="img">Gambar (Maks 2MB)</label>
                     <input type="file" name="img" id="img" class="form-control">
-
-                    <div class="mt-1">
-                        <img src="" class="img-thumbnail img-preview" width="100px">
-                    </div>
                 </div>
 
                 <div class="row">
