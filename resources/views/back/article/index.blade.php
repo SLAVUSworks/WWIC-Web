@@ -25,13 +25,7 @@
             </div>
             @endif
 
-            @if (session('success'))
-            <div class="my-2">
-                <div class="alert alert-success">
-                    {{ (session('success')) }}
-                </div>
-            </div>
-            @endif
+            <div class="swal" data-swal="{{ session('success') }}"></div>
 
             <table class="table table-bordered" id="dataTable">
                 <thead>
@@ -59,6 +53,57 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.datatables.net/2.0.3/js/dataTables.js"></script>
     <script src="https://cdn.datatables.net/2.0.3/js/dataTables.bootstrap5.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    {{-- Alert --}}
+    <script>
+        const swal = $('.swal').data('swal');
+
+        if (swal) {
+            Swal.fire({
+                'title': 'Berhasil',
+                'text' : swal,
+                'icon' : 'success',
+                'showConfirmButton' : false,
+                'timer' : 2000,
+            })
+        }
+
+        function deleteArticle(e) {
+        let id = e.getAttribute('data-id');
+
+        Swal.fire({
+            title: 'Hapus',
+            text: "Anda yakin hapus Artikel ini?",
+            showCancelButton: true,
+            confirmButtonText: 'Hapus!',
+            cancelButtonText: 'Batal'
+        }).then((result) => {
+            if (result.value) {
+                $.ajax({
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },
+                    type: 'DELETE',
+                    url: '/article/' + id, // Corrected URL concatenation
+                    dataType: "json",
+                    success: function (response) { // Corrected spelling of 'success'
+                        Swal.fire({
+                            title: 'Berhasil',
+                            text: response.message,
+                            icon: 'success',
+                        }).then((result) => {
+                            window.location.href = '/article'; // Corrected spelling of 'window'
+                        });
+                    },
+                    error: function (xhr, ajaxOptions, thrownError) {
+                        alert(xhr.status + "\n" + xhr.responseText + "\n" + thrownError); // Added missing concatenation operator
+                    }
+                });
+            }
+        });
+    }
+    </script>
 
     <script>
         $(document).ready(function() {

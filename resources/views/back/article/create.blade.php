@@ -44,7 +44,7 @@
 
                 <div class="mb-3">
                     <label for="desc">Deskripsi</label>
-                    <textarea name="desc" id="desc" cols="30" rows="10" class="form-control"></textarea>
+                    <textarea name="desc" id="myeditor" cols="30" rows="10" class="form-control"></textarea>
                 </div>
                 <div class="mb-3">
                     <label for="img">Gambar (Maks 2MB)</label>
@@ -80,4 +80,19 @@
 
 @push('js')
     <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://cdn.ckeditor.com/4.22.1/standard/ckeditor.js"></script>
+
+    <script>
+        var options = {
+            filebrowserImageBrowseUrl: '/laravel-filemanager?type=Images',
+            filebrowserImageUploadUrl: '/laravel-filemanager/upload?type=Images&_token=',
+            filebrowserBrowseUrl: '/laravel-filemanager?type=Files',
+            filebrowserUploadUrl: '/laravel-filemanager/upload?type=Files&_token=',
+            clipboard_handleImages: false
+        }
+    </script>
+
+    <script>
+        CKEDITOR.replace( 'myeditor', options );
+    </script>
 @endpush

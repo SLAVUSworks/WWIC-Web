@@ -46,7 +46,7 @@ class ArticleController extends Controller
                     <div class="text-center">
                         <a href="article/'.$article->id.'" class="btn btn-secondary">Detail</a>
                         <a href="article/'.$article->id.'/edit" class="btn btn-primary">Edit</a>
-                        <a href="" class="btn btn-danger">Delete</a>
+                        <a href="#" onClick="deleteArticle(this)" data-id="'.$article->id.'" class="btn btn-danger">Delete</a>
                     </div>';
                 })
                 ->rawColumns(['category_id', 'status', 'button','views'])
@@ -138,6 +138,12 @@ class ArticleController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $data = Article::find($id);
+            Storage::delete('public/back/'.$data->img);
+            $data->delete();
+
+            return response()->json([
+                'message' => 'Data Artikel Berhasil Dihapus'
+            ]);
     }
 }
