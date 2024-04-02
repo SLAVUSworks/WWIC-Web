@@ -3,16 +3,16 @@
 @section('halaman', "Detail Artikel")
 
 @section('main')
-<main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+<main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 mb-5">
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
         <h1 class="h2">Detail Artikel</h1>
        
     </div>
         <div class="mt-3">
-            <table class="table table-bordered" id="dataTable">
+            <table class="table table-striped table-bordered">
                 <tr>
-                    <th>Judul</th>
-                    <td>{{ $article->title }}</td>
+                    <th width="250px">Judul</th>
+                    <td width="100%">{{ $article->title }}</td>
                 </tr>
                 <tr>
                     <th>Kategori</th>
@@ -24,7 +24,7 @@
                 </tr>
                 <tr>
                     <th>Deskripsi</th>
-                    <td>{{ $article->desc }}</td>
+                    <td>{!! $article->desc !!}</td>
                 </tr>
                 <tr>
                     <th>Gambar</th>
