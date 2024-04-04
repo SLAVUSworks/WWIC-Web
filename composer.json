@@ -11,6 +11,7 @@
         "laravel/framework": "^10.10",
         "laravel/sanctum": "^3.3",
         "laravel/tinker": "^2.8",
+        "laravel/ui": "4.2",
         "unisharp/laravel-filemanager": "^2.8",
         "yajra/laravel-datatables": "10.0"
     },

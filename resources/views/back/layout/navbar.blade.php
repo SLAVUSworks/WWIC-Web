@@ -20,13 +20,18 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">
+          <a class="nav-link {{ Request::segment(1) === 'users' ? 'active' : null }}" href="{{ url('users') }}">
             <span data-feather="users" class="align-text-bottom"></span>
             Users
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">
+          <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+            @csrf
+          </form>
+          
+          <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();
+          document.getElementById('logout-form').submit();">
             <span data-feather="log-out" class="align-text-bottom"></span>
             Logout
           </a>
