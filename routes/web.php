@@ -6,10 +6,7 @@ use App\Http\Controllers\Back\DashboardController;
 use App\Http\Controllers\Back\ArticleController;
 use App\Http\Controllers\Back\CategoryController;
 use App\Http\Controllers\Back\UserController;
-
-
-
-
+use GuzzleHttp\Middleware;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,7 +30,7 @@ Route::middleware('auth')->group(function(){
     
     Route::resource('/categories', CategoryController::class)->only([
         'index', 'store', 'update', 'destroy'
-    ]);
+    ])->Middleware('UserAccess:1');
     
     Route::resource('/users', UserController::class);
     

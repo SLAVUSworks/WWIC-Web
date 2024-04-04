@@ -13,12 +13,14 @@
             Artikel
           </a>
         </li>
+        @if (auth()->user()->role == 1)
         <li class="nav-item">
           <a class="nav-link {{ Request::segment(1) === 'categories' ? 'active' : null }}" href="{{ url('categories') }}">
             <span data-feather="list" class="align-text-bottom"></span>
             Kategori
           </a>
         </li>
+        @endif
         <li class="nav-item">
           <a class="nav-link {{ Request::segment(1) === 'users' ? 'active' : null }}" href="{{ url('users') }}">
             <span data-feather="users" class="align-text-bottom"></span>
