@@ -13,7 +13,7 @@
             @csrf
 
             <div class="mb3">
-                <p>Yang Bener aja? <b>{{ $item->name }}</b> Dihapus, Rugi dong...</p>
+                <p>Yang Bener aja? <b>{{ $item->nickname }}</b> Dihapus, Rugi dong...</p>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Gak dlu</button>

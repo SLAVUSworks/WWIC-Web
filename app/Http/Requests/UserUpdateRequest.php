@@ -22,10 +22,12 @@ class UserUpdateRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name'                      => 'required|min:3',
+            'nickname'                  => 'nullable|min:3',
+            'full_name'                 => 'nullable',
             'email'                     => 'required|email',
             'password'                  => 'nullable|min:8|confirmed',
-            'password_confirmation'     => 'nullable|min:8|required_with:password'
+            'password_confirmation'     => 'nullable|min:8|required_with:password',
+            'avatar'                    => 'nullable|image|max:512' // Removed 'file' and 'mimes' rules
         ];
     }
 }

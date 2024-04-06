@@ -7,6 +7,7 @@ use App\Http\Requests\UserRequest;
 use App\Http\Requests\UserUpdateRequest;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 class UserController extends Controller
 {
@@ -33,23 +34,54 @@ class UserController extends Controller
         return back()->with('success','Pengguna Sudah Ditambahkan!');
     }
 
-    public function update(UserUpdateRequest $request, $id)
-    {
-        $data = $request->validated();
+public function update(UserUpdateRequest $request, $id)
+{
+    $data = $request->validated();
     
-        if ($request->has('password') && $request->input('password') != '') {
-            $data['password'] = bcrypt($data['password']);
+    $request->validate([
+        // Other validation rules
+        'avatar' => 'nullable|image|max:512', // Adjusted validation rules for avatar
+    ]);
+
+    if ($request->hasFile('avatar')) {
+        $avatar = $request->file('avatar');
+        
+        // Validate file type
+        $allowedFileTypes = ['jpeg', 'jpg', 'png', 'gif'];
+        $extension = $avatar->getClientOriginalExtension();
+        
+        if (!in_array($extension, $allowedFileTypes)) {
+            return back()->withErrors(['avatar' => 'The avatar must be an image (JPEG, JPG, PNG, GIF).'])->withInput();
         }
+        
+        // If validation passes, move the file to the desired location
+        $avatarPath = $avatar->store('avatars', 'public');
+        $data['avatar'] = $avatarPath;
+    }
+
+    if ($request->has('password') && $request->input('password') != '') {
+        $data['password'] = bcrypt($data['password']);
+    }
     
-        $user = User::findOrFail($id); // Use findOrFail to throw a ModelNotFoundException if the user with the given ID is not found
-        $user->update([
-            'name' => $data['name'], // Use $data array instead of $request->name and $request->email
-            'email' => $data['email'],
-            'password' => $data['password'] ?? $user->password, // Use ?? operator to maintain existing password if it's not being updated
-        ]);
+    $user = User::findOrFail($id);
     
-        return back()->with('success', 'Pengguna Sudah Diedit!');
-    }    
+    // Log data to debug
+    Log::info('Data before update:', $data);
+    
+    $user->update([
+        'nickname' => $data['nickname'],
+        'full_name' => $data['full_name'],
+        'email' => $data['email'],
+        'password' => $data['password'] ?? $user->password,
+        'avatar' => $data['avatar'] ?? $user->avatar, // Use ?? operator to maintain existing avatar if it's not being updated
+    ]);
+
+    // Log updated user
+    Log::info('Updated user:', $user->toArray());
+
+    return back()->with('success', 'Pengguna Sudah Diedit!');
+}
+
 
 
     public function destroy(string $id)
