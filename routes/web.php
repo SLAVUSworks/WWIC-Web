@@ -7,6 +7,9 @@ use App\Http\Controllers\Back\ArticleController;
 use App\Http\Controllers\Back\CategoryController;
 use App\Http\Controllers\Back\UserController;
 use App\Http\Controllers\Front\HomeController;
+use App\Http\Controllers\Front\ArticleController as FrontArticleController;
+use App\Models\Article;
+use Illuminate\Support\Facades\Auth;
 use GuzzleHttp\Middleware;
 
 /*
@@ -25,6 +28,9 @@ use GuzzleHttp\Middleware;
 // });
 
 Route::get('/',[HomeController::class, 'index']);
+Route::post('/articles/search',[HomeController::class, 'index'])->name('search');
+
+Route::get('/p/{slug}',[FrontArticleController::class, 'show']);
 
 Route::middleware('auth')->group(function(){
     Route::get('/dashboard', [DashboardController::class, 'index']);
