@@ -26,7 +26,7 @@
     </div>
     <!-- Side widget-->
     <div class="card mb-4 opacity shadow">
-        <div class="card-header">Side Widget</div>
-        <div class="card-body">You can put anything you want inside of these side widgets. They are easy to use, and feature the Bootstrap 5 card component!</div>
+        <div class="card-header">Discord Server</div>
+        <div class="card-body"><iframe src="https://discord.com/widget?id=846323175570931724&theme=dark" width="100%" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe></div>
     </div>
 </div>
