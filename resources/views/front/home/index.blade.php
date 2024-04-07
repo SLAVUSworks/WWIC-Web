@@ -1,5 +1,7 @@
 @extends('front.layout.template')
 
+@section('nama-tab', 'WWIC')
+
 @section('main')
 <!-- Page header with logo and tagline-->
 <header class="py-5 opacity shadow mb-4">
