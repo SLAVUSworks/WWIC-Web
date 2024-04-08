@@ -61,11 +61,9 @@ class ArticleController extends Controller
      */
     public function create()
     {
-        return view('back.article.create', [
-            'categories' => Category::get()
-        ]);
+        $categories = Category::doesntHave('children')->get(['id', 'name']);
+        return view('back.article.create', compact('categories'));
     }
-
     /**
      * Store a newly created resource in storage.
      */
@@ -100,10 +98,11 @@ class ArticleController extends Controller
      */
     public function edit(string $id)
     {
+        $categories = Category::whereDoesntHave('children')->get();
         return view('back.article.update', [
             'article'       => Article::find($id),
-            'categories'    => Category::get()
-        ]);
+            'categories'    => $categories
+        ]);        
     }
 
     /**

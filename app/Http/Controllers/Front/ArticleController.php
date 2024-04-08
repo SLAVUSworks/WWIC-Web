@@ -26,9 +26,15 @@ class ArticleController extends Controller
             ->simplePaginate(9);
         }
 
+        $parentCategories = Category::whereNull('parent_id')
+            ->with('children')
+            ->latest()
+            ->get();
+    
         return view('front.article.index', [
             'articles' => $articles,
-            'keyword' => $keyword
+            'keyword' => $keyword,
+            'parentCategories' => $parentCategories,
         ]);
     }
 
@@ -36,10 +42,16 @@ class ArticleController extends Controller
     {
         $article = Article::whereSlug($slug)->firstOrFail();
         $article -> increment('views');
-        
+
+        $parentCategories = Category::whereNull('parent_id')
+            ->with('children')
+            ->latest()
+            ->get();
+
         return view('front.article.show', [
             'article' => $article,
-            'categories' => Category::latest()->get()
+            'categories' => Category::whereDoesntHave('children')->latest()->get(),
+            'parentCategories' => $parentCategories,
         ]);
     }
 }

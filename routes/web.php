@@ -44,7 +44,7 @@ Route::middleware('auth')->group(function(){
     Route::resource('article', ArticleController::class);
     
     Route::resource('/categories', CategoryController::class)->only([
-        'index', 'store', 'update', 'destroy'
+        'index', 'store', 'update', 'destroy', 'parent'
     ])->Middleware('UserAccess:1');
     
     Route::resource('/users', UserController::class);

@@ -10,7 +10,7 @@
         @stack('meta')
         <title>@yield('nama-tab') - Development Phase</title>
         <!-- Favicon-->
-        <link rel="icon" type="image/x-icon" href="{{ asset('front/img/favicon.ico') }}" />
+        <link rel="icon" type="image/x-icon" href="{{ asset('front/img/wwic-icon.png') }}" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="{{ asset('front/css/styles.css') }}" rel="stylesheet" />
         <link href="{{ asset('front/css/custom.css') }}" rel="stylesheet" />

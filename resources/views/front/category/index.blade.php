@@ -17,7 +17,7 @@
     </div>
 
     <div class="shadow opacity rounded col-12" style="width: max-content">
-        <p class="text-dark mb-4 p-3">Artikel dengan kata kunci : <i>{{ $category }}</i></p>
+        <p class="text-dark mb-4 p-3">Artikel dengan kategori : <i>{{ $category }}</i></p>
     </div>
 
     <div class="row">

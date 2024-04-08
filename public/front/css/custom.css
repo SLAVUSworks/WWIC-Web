@@ -1,5 +1,5 @@
 .bg {
-    background-image: url("/storage/photos/1/Images/wwic-bg.jpg");
+    background-image: url("/front/img/wwic-bg.jpg");
     background-position:bottom;
     background-attachment: fixed;
     background-size: cover; 
@@ -33,7 +33,7 @@
 }
 
 .card-height {
-    height: 14em;
+    height: 15em;
     position: relative;
 }
 
