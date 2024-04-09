@@ -41,6 +41,22 @@
               @enderror
             </div>
             <div class="mb-3">
+              {{-- <label for="role" class="mb-3">Role</label>
+              <input type="role" name="role" id="role" class="form-control @error('role') is-invalid @enderror" value="{{ old('role') }}"> --}}
+              <label for="role">Role</label>
+              <select name="role" name="role" id="role" class="form-control @error('role') is-invalid @enderror" value="{{ old('role') }}">
+                  <option value="" hidden>Select</option>
+                  <option value="1" class="btn">Admin</option>
+                  <option value="2" class="btn">Moderator</option>
+                  <option value="3" class="btn">Writer</option>
+              </select>
+              @error('role')
+              <div class="invalid-feedback mb-3">
+                  {{ $message }}
+              </div>
+              @enderror
+            </div>
+            <div class="mb-3">
               <label for="password" class="mb-3">Password</label>
               <input type="password" name="password" id="password" class="form-control @error('password') is-invalid @enderror" value="{{ old('password') }}">
 

@@ -25,6 +25,7 @@ class UserRequest extends FormRequest
             'nickname'                  => 'required|min:3',
             'full_name'                 => 'required',
             'email'                     => 'required|email|unique:users,email',
+            'role'                      => 'nullable',
             'password'                  => 'required|min:8|confirmed',
             'password_confirmation'     => 'required|min:8'
         ];

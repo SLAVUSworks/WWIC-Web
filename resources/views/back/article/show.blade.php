@@ -23,6 +23,10 @@
                     <td>{{ $article->publish_date }}</td>
                 </tr>
                 <tr>
+                    <th>Author</th>
+                    <td>{{ $article->User->nickname }}</td>
+                </tr>
+                <tr>
                     <th>Deskripsi</th>
                     <td>{!! $article->desc !!}</td>
                 </tr>

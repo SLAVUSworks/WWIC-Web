@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
 use App\Models\Article;
-use App\Models\Category;
 use Illuminate\Http\Request;
 
 class ArticleController extends Controller
@@ -26,15 +25,9 @@ class ArticleController extends Controller
             ->simplePaginate(9);
         }
 
-        $parentCategories = Category::whereNull('parent_id')
-            ->with('children')
-            ->latest()
-            ->get();
-    
         return view('front.article.index', [
             'articles' => $articles,
             'keyword' => $keyword,
-            'parentCategories' => $parentCategories,
         ]);
     }
 
@@ -42,16 +35,10 @@ class ArticleController extends Controller
     {
         $article = Article::whereSlug($slug)->firstOrFail();
         $article -> increment('views');
-
-        $parentCategories = Category::whereNull('parent_id')
-            ->with('children')
-            ->latest()
-            ->get();
-
+        $article -> with('user','category');
+        
         return view('front.article.show', [
             'article' => $article,
-            'categories' => Category::whereDoesntHave('children')->latest()->get(),
-            'parentCategories' => $parentCategories,
         ]);
     }
 }

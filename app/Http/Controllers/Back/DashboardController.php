@@ -15,7 +15,7 @@ class DashboardController extends Controller
             'total_articles'    => Article::count(),
             'total_categories'  => Category::whereDoesntHave('children')->count(),
             'latest_article'    => Article::with('Category')->whereStatus(1)->take(2)->get(),
-            'popular_article'    => Article::with('Category')->whereStatus(1)->orderBy('views', 'desc')->get()
+            'popular_article'   => Article::with('Category')->whereStatus(1)->take(2)->orderBy('views', 'desc')->get()
         ]);
     }
 }
