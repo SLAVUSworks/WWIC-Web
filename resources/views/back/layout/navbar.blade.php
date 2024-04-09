@@ -16,7 +16,7 @@
         @if (auth()->user()->role == 1)
         <li class="nav-item">
           <a class="nav-link {{ Request::segment(1) === 'categories' ? 'active' : null }}" href="{{ url('categories') }}">
-            <span data-feather="list" class="align-text-bottom"></span>
+            <span data-feather="folder" class="align-text-bottom"></span>
             Kategori
           </a>
         </li>
@@ -25,6 +25,12 @@
           <a class="nav-link {{ Request::segment(1) === 'users' ? 'active' : null }}" href="{{ url('users') }}">
             <span data-feather="users" class="align-text-bottom"></span>
             Users
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link {{ Request::segment(1) === 'config' ? 'active' : null }}" aria-current="page" href="{{ url('config') }}">
+            <span data-feather="list" class="align-text-bottom"></span>
+            Config
           </a>
         </li>
         <li class="nav-item">
