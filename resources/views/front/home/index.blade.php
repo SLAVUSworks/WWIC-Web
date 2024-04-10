@@ -3,15 +3,7 @@
 @section('nama-tab', 'WWIC')
 
 @section('main')
-<!-- Page header with logo and tagline-->
-<header class="py-5 opacity shadow mb-4">
-    <div class="container-fluid opacity-100">
-        <div class="text-center my-5">
-            <h1 class="fw-bolder text-dark">World Witches Indonesia Community</h1>
-            <p class="lead mb-0 text-dark">Oleh langit dan lautan, kita dihubungkan!</p>
-        </div>
-    </div>
-</header>
+@include('front.layout.header')
 <!-- Page content-->
 <div class="container">
     <div class="row">

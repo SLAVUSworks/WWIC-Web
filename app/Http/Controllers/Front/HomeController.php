@@ -14,7 +14,7 @@ class HomeController extends Controller
             ->where('status', '1')
             ->latest()
             ->simplePaginate(6);
-
+        
         return view('front.home.index', [
             'latest_post' => Article::with('User', 'Category')->whereStatus(1)->latest()->firstOrFail(),
             'articles' => $articles,
