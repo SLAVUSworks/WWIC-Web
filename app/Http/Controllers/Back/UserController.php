@@ -17,7 +17,6 @@ class UserController extends Controller
         } else {
             $users = User::whereId(auth()->user()->id)->get();
         }
-        
 
         return view('back.user.index', [
             'users' => $users
@@ -82,7 +81,12 @@ class UserController extends Controller
         return back()->with('success', 'Pengguna Sudah Diedit!');
     }
 
-
+    public function show()
+    {
+        return view('back.user.show', [
+            'user' => User::whereId(auth()->user()->id)->get()
+        ]);
+    }
 
     public function destroy(string $id)
     {

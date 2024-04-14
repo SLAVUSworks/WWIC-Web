@@ -49,6 +49,7 @@ Route::middleware('auth')->group(function(){
     ])->Middleware('UserAccess:1');
     
     Route::resource('/users', UserController::class);
+    Route::get('/profile', [UserController::class, 'show']);
 
     Route::resource('/config', ConfigController::class)->only([
         'index', 'update'

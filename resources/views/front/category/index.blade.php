@@ -1,5 +1,15 @@
 @extends('front.layout.template')
 
+@push('meta')
+    <meta name="description" value="Langit dan Lautan yang Menguhubungkan Kita, Sampai Jumpa Dihamparan Langit yang Luas dan Lautan yang Biru | Website World Witches Indonesia Community, Seputar Informasi Franchise World Witches serta Kegiatan Komunitas">
+    <meta name="keyword" value="world witches, strike witches, world witches community, world witches indonesia community, wwic, world witches wiki, brave witches, luminous witches, w witch, s witch, l witch">
+    <meta property="og:title" content="Kategori {{ $category . " - WWIC" }}">
+    <meta property="og:url" value="{{ url()->current() }}">
+    <meta property="og:site_name" content="World Witches Indonesia Community">
+    <meta property="og:description" value="Langit dan Lautan yang Menguhubungkan Kita, Sampai Jumpa Dihamparan Langit yang Luas dan Lautan yang Biru | Website World Witches Indonesia Community, Seputar Informasi Franchise World Witches serta Kegiatan Komunitas">
+    <meta property="og:image" value="{{ asset('front/img/wwic-bg.jpg') }}">
+@endpush
+
 @section('nama-tab', 'Kategori ' . $category)
 
 @section('main')

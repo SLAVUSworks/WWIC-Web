@@ -1,5 +1,17 @@
 @extends('front.layout.template')
 
+@push('meta')
+        <meta name="author" content="{{ $article->user->nickname }}" />
+        <meta name="description" value="{{ Str::limit(strip_tags($article->desc), 150, '...') }}">
+        <meta name="keyword" value="{{ $article->slug }}, {{ $article->title }}, {{ $article->title }} world witches, {{ $article->slug }} world witches, {{ $article->slug }} strike witches, {{ $article->slug }} sw, world witches, strike witches, world witches community, world witches indonesia community, wwic, world witches wiki, brave witches, luminous witches, w witch, s witch, l witch">
+        <meta property="og:type" content="article">
+        <meta property="og:title" content="{{ $article->title . " - WWIC" }}">
+        <meta property="og:url" value="{{ url()->current() }}">
+        <meta property="og:site_name" content="World Witches Indonesia Community">
+        <meta property="og:description" value="{{ Str::limit(strip_tags($article->desc), 150, '...') }}">
+        <meta property="og:image" value="{{ asset('storage/back/' .$article->img) }}">
+@endpush
+
 @section('nama-tab', $article->title)
 
 @section('main')
