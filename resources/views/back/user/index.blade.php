@@ -35,6 +35,7 @@
                         <th>No</th>
                         <th>Nama</th>
                         <th>Email</th>
+                        <th>Status</th>
                         <th>Dibuat Pada</th>
                         <th>Fungsi</th>
                     </tr>
@@ -45,6 +46,13 @@
                         <td>{{ $loop->iteration }}</td>
                         <td>{{ $item->nickname }}</td>
                         <td>{{ $item->email }}</td>
+                        <td>
+                          @if(Cache::has('user-online' . $item->id))
+                              <span class="badge bg-success">Online</span>
+                          @else
+                              <span class="badge bg-secondary">Offline</span>
+                          @endif
+                        </td>
                         <td>{{ $item->created_at }}</td>
                         <td>
                             <div class="text-center">

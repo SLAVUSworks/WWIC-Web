@@ -8,6 +8,7 @@ use App\Http\Requests\UserUpdateRequest;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Cache;
 
 class UserController extends Controller
 {
@@ -21,6 +22,17 @@ class UserController extends Controller
         return view('back.user.index', [
             'users' => $users
         ]);
+    }
+
+    public function userOnlineStatus()
+    {
+        $users = User::all();
+        foreach ($users as $user) {
+            if (Cache::has('user-online' . $user->id))
+                echo $user->name . " is online. <br>";
+            else
+                echo $user->name . " is offline <br>";
+        }
     }
 
     public function store(UserRequest $request)
