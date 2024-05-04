@@ -13,7 +13,7 @@
 
                         <div class="row mb-3">
                             <h2 class="text-center">Hitam Dilarang Login</h2>
-                            <img src="https://media.discordapp.net/attachments/497671304229421069/1225037585584361612/b05d8aec-4083-4046-a47a-9e60423610da.png?ex=661fac28&is=660d3728&hm=4e2c05aa292987e8ff0b3adb51f1937d44a73174dff7eb95e654a34dad745a30&=&format=webp&quality=lossless&width=550&height=309" alt="" height="150px">
+                            <img src="https://cdn.discordapp.com/attachments/497671304229421069/1225037585584361612/b05d8aec-4083-4046-a47a-9e60423610da.png?ex=66376728&is=663615a8&hm=70a47c3dc0976e0a1ce23b4bfb87e54cc0c1f91dc45e8bdb7b74121fd6ab70f2&" alt="" height="150px">
                             <label for="email" class="col-md-4 col-form-label text-md-end mt-3">{{ __('Email Address') }}</label>
 
                             <div class="col-md-6 mt-3">

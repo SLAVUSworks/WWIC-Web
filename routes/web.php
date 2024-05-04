@@ -13,6 +13,7 @@ use App\Http\Controllers\Front\ArticleController as FrontArticleController;
 use App\Http\Controllers\Front\CategoryController as FrontCategoryController;
 
 use App\Models\Article;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Auth;
 use GuzzleHttp\Middleware;
 
@@ -57,6 +58,10 @@ Route::middleware('auth')->group(function(){
     
     Route::group(['prefix' => 'laravel-filemanager'], function () {
         \UniSharp\LaravelFilemanager\Lfm::routes();
+    });
+
+    Route::get('/linkstorage', function () {
+        Artisan::call('storage:link');
     });
 });
 
